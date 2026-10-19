@@ -1,0 +1,31 @@
+.elementor-kit-9{--e-global-color-primary:#000000;--e-global-color-secondary:#54595F;--e-global-color-text:#555555;--e-global-color-accent:#07ABFE;--e-global-color-db372ae:#FFFFFF;--e-global-color-51b6d2c:#000000;--e-global-color-39ba2b7:#BF4700;--e-global-color-0dce62a:#E26E1D;--e-global-color-41b9377:#EFF9FE;--e-global-color-be06c66:#C8ECFE;--e-global-color-50574a7:#06ABFE4D;--e-global-color-39e9c2b:#54595F4D;--e-global-typography-primary-font-family:"Montserrat";--e-global-typography-primary-font-size:1.6em;--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Montserrat";--e-global-typography-secondary-font-size:1.2em;--e-global-typography-secondary-font-weight:600;--e-global-typography-text-font-family:"Montserrat";--e-global-typography-text-font-size:1em;--e-global-typography-text-font-weight:500;--e-global-typography-text-line-height:2em;--e-global-typography-accent-font-family:"Montserrat";--e-global-typography-accent-font-size:0.8em;--e-global-typography-accent-font-weight:500;--e-global-typography-19f037c-font-family:"Montserrat";--e-global-typography-19f037c-font-size:0.9em;--e-global-typography-19f037c-font-weight:600;--e-global-typography-660262f-font-family:"Montserrat";--e-global-typography-660262f-font-size:1.2em;--e-global-typography-660262f-font-weight:600;--e-global-typography-660262f-text-transform:uppercase;font-size:1em;}.elementor-kit-9 button,.elementor-kit-9 input[type="button"],.elementor-kit-9 input[type="submit"],.elementor-kit-9 .elementor-button{background-color:var( --e-global-color-accent );font-family:var( --e-global-typography-19f037c-font-family ), Sans-serif;font-size:var( --e-global-typography-19f037c-font-size );font-weight:var( --e-global-typography-19f037c-font-weight );color:var( --e-global-color-db372ae );border-style:none;border-radius:7px 7px 7px 7px;padding:12px 15px 10px 15px;}.elementor-kit-9 e-page-transition{background-color:#FFBC7D;}.elementor-kit-9 a{color:var( --e-global-color-accent );}.elementor-kit-9 h1{color:var( --e-global-color-51b6d2c );font-family:var( --e-global-typography-primary-font-family ), Sans-serif;font-size:var( --e-global-typography-primary-font-size );font-weight:var( --e-global-typography-primary-font-weight );line-height:var( --e-global-typography-primary-line-height );}.elementor-kit-9 h2{color:var( --e-global-color-text );font-family:var( --e-global-typography-secondary-font-family ), Sans-serif;font-size:var( --e-global-typography-secondary-font-size );font-weight:var( --e-global-typography-secondary-font-weight );}.elementor-kit-9 h3{color:var( --e-global-color-39ba2b7 );font-family:var( --e-global-typography-660262f-font-family ), Sans-serif;font-size:var( --e-global-typography-660262f-font-size );font-weight:var( --e-global-typography-660262f-font-weight );text-transform:var( --e-global-typography-660262f-text-transform );}.elementor-kit-9 h4{color:var( --e-global-color-39ba2b7 );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){--kit-widget-spacing:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}.site-header .site-branding{flex-direction:column;align-items:stretch;}.site-header{padding-inline-end:0px;padding-inline-start:0px;}.site-footer .site-branding{flex-direction:column;align-items:stretch;}@media(max-width:1024px){.elementor-kit-9 h1{font-size:var( --e-global-typography-primary-font-size );line-height:var( --e-global-typography-primary-line-height );}.elementor-kit-9 h2{font-size:var( --e-global-typography-secondary-font-size );}.elementor-kit-9 h3{font-size:var( --e-global-typography-660262f-font-size );}.elementor-kit-9 button,.elementor-kit-9 input[type="button"],.elementor-kit-9 input[type="submit"],.elementor-kit-9 .elementor-button{font-size:var( --e-global-typography-19f037c-font-size );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-kit-9 h1{font-size:var( --e-global-typography-primary-font-size );line-height:var( --e-global-typography-primary-line-height );}.elementor-kit-9 h2{font-size:var( --e-global-typography-secondary-font-size );}.elementor-kit-9 h3{font-size:var( --e-global-typography-660262f-font-size );}.elementor-kit-9 button,.elementor-kit-9 input[type="button"],.elementor-kit-9 input[type="submit"],.elementor-kit-9 .elementor-button{font-size:var( --e-global-typography-19f037c-font-size );}.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start custom CSS */.blu-bullet ul {
+    list-style-type: none;
+    padding: 0;
+    text-indent: -27px;
+    margin-left: 20px;
+}
+.blu-bullet ul li::before {
+content: "";
+background-image: url('../../2025/10/bluecheck.png');
+background-size: 16px; /* Set the desired width and height for your image */
+background-repeat: no-repeat; /* Prevent image repetition */
+display: inline-block;
+width: 16px; /* Adjust the width as needed */
+height: 16px; /* Adjust the height as needed */
+margin-right: 10px;
+}
+
+ .elementor-button {
+     color: #fff;
+ }
+ 
+ .elementor hr {
+    background-color: transparent;
+    margin: 30px 0px;
+}
+ 
+.short-line {
+     max-width: 150px;
+     border-top: 3px solid;
+     color: #BF4700;
+ }/* End custom CSS */
