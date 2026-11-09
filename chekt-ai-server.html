@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CHeKT AI Server On-Page Review | VertoDigital</title>
+    <meta name="description" content="A review copy of the CHeKT AI Server page with each proposed on-page change marked, so every change can be accepted or rejected." />
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#07abfe" />
+
+    <style>
+
+
+      :root {
+        --ck-blue: #07abfe;
+        --ck-blue-dark: #0580bd;
+        --ck-orange: #c2410c;
+        --ck-ink: #333333;
+        --ck-navy: #07162e;
+        --ck-tint: #eaf5fc;
+        --ins-bg: #d9f7df;
+        --ins-ink: #0b5d22;
+        --ins-line: #1f9d45;
+        --del-bg: #fde3e1;
+        --del-ink: #8a1c14;
+        --del-line: #d33a2c;
+        --flag-bg: #fff1c2;
+        --flag-line: #d19a00;
+        --panel: #ffffff;
+        --panel-line: #d6dde4;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+      body { margin: 0; font-family: Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        color: var(--ck-ink); background: #fff; line-height: 1.7; font-size: 16px; padding-bottom: 84px; }
+      a { color: var(--ck-blue-dark); font-weight: 600; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      img { max-width: 100%; height: auto; }
+      .wrap { max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+
+      /* ── Review banner ─────────────────────────────────────────── */
+      .review-banner { background: #111827; color: #e5e7eb; font-size: 14px; }
+      .review-banner .wrap { padding-top: 18px; padding-bottom: 18px; }
+      .review-banner h1 { margin: 0 0 6px; font-size: 18px; color: #fff; line-height: 1.3; }
+      .review-banner p { margin: 4px 0; max-width: 78ch; }
+      .legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 12px; font-size: 13px; }
+      .legend span { display: inline-flex; align-items: center; gap: 6px; }
+      .sw { display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 12px; }
+      .sw.ins { background: var(--ins-bg); color: var(--ins-ink); border-bottom: 2px solid var(--ins-line); }
+      .sw.del { background: var(--del-bg); color: var(--del-ink); text-decoration: line-through; border-bottom: 2px solid var(--del-line); }
+      .sw.flag { background: var(--flag-bg); color: #5c4300; border-bottom: 2px solid var(--flag-line); }
+
+      /* ── Tracked-change styling ────────────────────────────────── */
+      [data-c] { transition: opacity .15s; }
+      body[data-view="markup"] ins[data-c], body[data-view="markup"] .x-ins {
+        background: var(--ins-bg); color: var(--ins-ink); text-decoration: none; border-bottom: 2px solid var(--ins-line); }
+      body[data-view="markup"] del[data-c], body[data-view="markup"] .x-del {
+        background: var(--del-bg); color: var(--del-ink); text-decoration: line-through; border-bottom: 2px solid var(--del-line); }
+      body[data-view="markup"] a ins[data-c], body[data-view="markup"] a del[data-c] { font-weight: inherit; }
+      body[data-view="markup"] div.x-ins, body[data-view="markup"] section.x-ins, body[data-view="markup"] p.x-ins, body[data-view="markup"] h2.x-ins, body[data-view="markup"] h3.x-ins,
+      body[data-view="markup"] li.x-ins, body[data-view="markup"] a.x-ins {
+        border-left: 4px solid var(--ins-line); border-bottom: 0; padding-left: 10px; }
+      body[data-view="markup"] div.x-del, body[data-view="markup"] p.x-del, body[data-view="markup"] h2.x-del, body[data-view="markup"] li.x-del, body[data-view="markup"] a.x-del {
+        border-left: 4px solid var(--del-line); border-bottom: 0; padding-left: 10px; }
+      body[data-view="markup"] [data-dim="1"] { opacity: .38; }
+      /* hidden by view or decision */
+      [data-hide="1"] { display: none !important; }
+      body:not([data-view="markup"]) ins[data-c], body:not([data-view="markup"]) del[data-c] { background: none; text-decoration: none; border: 0; }
+      body:not([data-view="markup"]) .chip, body:not([data-view="markup"]) .tag-note, body:not([data-view="markup"]) .flag-note { display: none !important; }
+      body:not([data-view="markup"]) mark.flag { background: none; border: 0; }
+
+      body[data-view="markup"] del[data-c] + ins[data-c], body[data-view="markup"] ins[data-c] + del[data-c] { margin-left: .35em; }
+      @media (max-width: 800px) { body { padding-bottom: 150px; } }
+      mark.flag { background: var(--flag-bg); color: inherit; border-bottom: 2px solid var(--flag-line); padding: 0 2px; cursor: help; }
+      .flag-note { display: inline-block; background: var(--flag-bg); color: #5c4300; border: 1px solid var(--flag-line);
+        border-radius: 3px; font-size: 11px; line-height: 1.5; padding: 0 6px; margin-left: 4px; font-weight: 600; vertical-align: middle; }
+
+      .chip { display: inline-flex; align-items: center; gap: 4px; background: #111827; color: #fff; border-radius: 999px;
+        padding: 2px 4px 2px 10px; font: 600 12px/1.4 Geist, Arial, sans-serif; margin: 0 6px 4px 0; vertical-align: middle; font-style: normal; text-decoration: none; }
+      .chip .n { font-family: "Geist Mono", monospace; }
+      .chip .lbl { max-width: 26ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; opacity: .85; font-weight: 500; }
+      .chip button { border: 0; border-radius: 999px; padding: 2px 9px; font: 600 11px/1.5 Geist, Arial, sans-serif; cursor: pointer; background: #374151; color: #fff; }
+      .chip button:hover { background: #4b5563; }
+      .chip button[aria-pressed="true"].acc { background: var(--ins-line); }
+      .chip button[aria-pressed="true"].rej { background: var(--del-line); }
+      .chip button:focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+      .chip-block { display: flex; margin: 10px 0 4px; }
+      .tag-note { display: inline-block; font: 600 11px/1.5 "Geist Mono", monospace; background: #e5e7eb; color: #374151; border-radius: 3px; padding: 0 6px; margin-left: 6px; vertical-align: middle; text-transform: none; letter-spacing: 0; }
+
+      /* ── Replica of the CHeKT page ─────────────────────────────── */
+      .ck-header { background: #000; color: #fff; }
+      .ck-header .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; padding-bottom: 14px; gap: 12px; flex-wrap: wrap; }
+      .ck-header img { height: 44px; width: auto; display: block; }
+      .ck-header nav { display: flex; gap: 20px; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; flex-wrap: wrap; }
+      .ck-header nav span { color: #fff; }
+      .ck-hero { background: linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)), repeating-linear-gradient(90deg,#1b2a3a 0 60px,#142130 60px 120px);
+        color: #fff; text-align: center; padding: 46px 16px 40px; }
+      .ck-hero .eyebrow { font-size: 18px; font-weight: 500; margin: 0 0 4px; }
+      .ck-hero h1 { font-size: clamp(28px, 4.4vw, 42px); line-height: 1.2; margin: 0 0 14px; font-weight: 500; }
+      .ck-hero h2 { font-size: clamp(17px, 2.4vw, 24px); font-weight: 500; margin: 0; line-height: 1.4; }
+      .ck-hero [data-c] { color: inherit; }
+      body[data-view="markup"] .ck-hero ins[data-c], body[data-view="markup"] .ck-hero .x-ins { color: var(--ins-ink); }
+      body[data-view="markup"] .ck-hero del[data-c], body[data-view="markup"] .ck-hero .x-del { color: var(--del-ink); }
+      .ck-hero .chip { margin-bottom: 8px; }
+      .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+      @media (max-width: 800px) { .cols { grid-template-columns: 1fr; gap: 20px; } }
+      .ck-sec { padding: 48px 0; }
+      .ck-sec.tint { background: var(--ck-tint); }
+      .ck-sec h2.ck-h2 { font-size: 24px; line-height: 1.3; margin: 0 0 14px; color: #111; }
+      .ck-sec .lead { font-size: 18px; font-weight: 600; color: #555; margin: 0 0 16px; line-height: 1.6; }
+      .accent { color: var(--ck-orange); font-weight: 700; text-align: center; font-size: 18px; margin: 0 0 16px; }
+      ul.checks { list-style: none; padding: 0; margin: 0; }
+      ul.checks li { position: relative; padding-left: 28px; margin: 0 0 10px; }
+      ul.checks li::before { content: ""; position: absolute; left: 4px; top: 8px; width: 8px; height: 14px; border: solid var(--ck-blue); border-width: 0 3px 3px 0; transform: rotate(45deg) scale(.7); }
+      .btn { display: inline-block; background: var(--ck-blue); color: #fff; font-weight: 700; font-size: 12.8px; letter-spacing: .03em; padding: 11px 22px; border-radius: 3px; text-transform: uppercase; margin: 6px 14px 6px 0; }
+      .btn.orange { background: #d35400; }
+      .btn:hover { text-decoration: none; filter: brightness(.95); }
+      .media { background: #0b1b30; color: #cbd5e1; border-radius: 4px; overflow: hidden; }
+      .media video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0b1b30; object-fit: cover; }
+      .caption { font-size: 12.5px; font-weight: 700; color: #444; padding: 14px 18px 0; text-align: left; line-height: 1.6; }
+      .flow { background: linear-gradient(#0a1b34, #07162e); color: #fff; padding: 40px 0 44px; text-align: center; }
+      .flow h2 { font-size: 20px; font-weight: 600; margin: 0 0 24px; }
+      .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 26px; }
+      @media (max-width: 800px) { .steps { grid-template-columns: 1fr 1fr; } }
+      .step { border: 1px solid rgba(255,255,255,.14); border-radius: 4px; padding: 14px 8px; font-size: 13px; background: rgba(255,255,255,.04); }
+      .step p { margin: 0; }
+      .step .t { font-weight: 600; margin-bottom: 8px; }
+      .step img { height: 56px; width: auto; margin: 6px 0 10px; opacity: .95; }
+      .step .noimg { height: 56px; margin: 6px 0 10px; }
+      .flow .strong { font-weight: 700; font-size: 15px; margin: 0 0 16px; }
+      .cta-band { background: var(--ck-blue); color: #fff; text-align: center; padding: 34px 16px; }
+      .cta-band h2 { margin: 0 0 12px; font-size: 22px; line-height: 1.35; }
+      .cta-band .btn { background: #fff; color: #05608f; margin-right: 0; }
+      .cta-band a { color: inherit; }
+      .ck-footer { background: #000; color: #cbd5e1; font-size: 14px; padding: 30px 0; }
+      .ck-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; }
+      .ck-footer a { color: #fff; font-weight: 500; margin-right: 16px; }
+
+      /* New sections that are wholly proposed */
+      .new-section { border-top: 0; }
+      ol.steps-list { padding-left: 0; list-style: none; counter-reset: s; margin: 0 0 12px; }
+      ol.steps-list li { counter-increment: s; position: relative; padding-left: 38px; margin-bottom: 12px; }
+      ol.steps-list li::before { content: counter(s); position: absolute; left: 0; top: 2px; width: 26px; height: 26px; border-radius: 50%; background: var(--ck-blue); color: #fff; font-weight: 700; font-size: 13px; text-align: center; line-height: 26px; }
+      .faq h3 { font-size: 17px; margin: 18px 0 4px; color: #111; line-height: 1.4; }
+      .faq p { margin: 0 0 6px; }
+
+      /* ── Meta + technical review panels ────────────────────────── */
+      .rv-panel { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 8px; padding: 18px 20px; margin: 22px 0; font-size: 15px; }
+      .rv-panel h2 { margin: 0 0 6px; font-size: 19px; color: #111827; line-height: 1.3; }
+      .rv-panel > p.sub { margin: 0 0 14px; color: #4b5563; font-size: 14px; }
+      .rv-panel h3 { font-size: 15px; margin: 20px 0 6px; color: #111827; }
+      .meta-row { border-top: 1px solid var(--panel-line); padding: 14px 0 6px; }
+      .meta-row:first-of-type { border-top: 0; }
+      .meta-row .what { font: 600 12px/1.4 "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; margin-bottom: 6px; }
+      .meta-row .cur, .meta-row .prop { margin: 4px 0; padding: 6px 10px; border-radius: 4px; font-size: 14.5px; line-height: 1.55; }
+      .meta-row .cur { background: var(--del-bg); color: var(--del-ink); border-left: 4px solid var(--del-line); }
+      .meta-row .prop { background: var(--ins-bg); color: var(--ins-ink); border-left: 4px solid var(--ins-line); }
+      .meta-row .tt { font: 600 11px/1.4 "Geist Mono", monospace; text-transform: uppercase; opacity: .75; display: block; }
+      .opts { margin: 8px 0 4px; display: grid; gap: 6px; }
+      .opts label { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; background: #f3f4f6; border: 1px solid transparent; border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+      .opts label:has(input:checked) { border-color: var(--ck-blue-dark); background: #e6f4fd; }
+      .opts .k { font-weight: 700; min-width: 66px; }
+      .opts .cc { color: #6b7280; font-size: 12.5px; }
+      pre.code { background: #0f172a; color: #e2e8f0; padding: 14px; border-radius: 6px; overflow-x: auto; font: 12.5px/1.55 "Geist Mono", monospace; margin: 8px 0; }
+      .tscroll { overflow-x: auto; }
+      table.simple { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+      table.simple th, table.simple td { border: 1px solid var(--panel-line); padding: 7px 10px; text-align: left; vertical-align: top; }
+      table.simple th { background: #f3f4f6; }
+      .alts { font-size: 14px; }
+      .fig-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-start; margin: 8px 0; }
+      .fig-row img { max-width: 180px; border: 1px solid var(--panel-line); border-radius: 4px; }
+
+      /* ── Sticky decision bar ───────────────────────────────────── */
+      .bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: #111827; color: #fff; box-shadow: 0 -4px 18px rgba(0,0,0,.25); }
+      .bar .wrap { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding-top: 10px; padding-bottom: 10px; font-size: 13px; }
+      .bar .count { font-weight: 600; }
+      .bar .count b { font-family: "Geist Mono", monospace; }
+      .seg { display: inline-flex; border: 1px solid #4b5563; border-radius: 6px; overflow: hidden; }
+      .seg button { background: transparent; color: #d1d5db; border: 0; padding: 6px 12px; font: 600 12.5px/1.2 Geist, Arial, sans-serif; cursor: pointer; border-right: 1px solid #4b5563; }
+      .seg button:last-child { border-right: 0; }
+      .seg button[aria-pressed="true"] { background: #fff; color: #111827; }
+      .bar .act { background: var(--ck-blue); color: #fff; border: 0; border-radius: 6px; padding: 7px 14px; font: 700 12.5px/1.2 Geist, Arial, sans-serif; cursor: pointer; }
+      .bar .act.ghost { background: transparent; border: 1px solid #4b5563; color: #d1d5db; font-weight: 600; }
+      .bar .grow { flex: 1 1 auto; }
+      .bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+      .list-btn { background: transparent; color: #93c5fd; border: 0; cursor: pointer; font: 600 13px Geist, Arial, sans-serif; text-decoration: underline; padding: 0; }
+      #decisions { display: none; position: fixed; right: 16px; bottom: 76px; z-index: 60; width: min(440px, calc(100vw - 32px)); max-height: 60vh; overflow: auto;
+        background: #fff; border: 1px solid var(--panel-line); border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,.28); padding: 14px 16px; font-size: 13.5px; }
+      #decisions.open { display: block; }
+      #decisions h2 { margin: 0 0 8px; font-size: 15px; }
+      #decisions ol { margin: 0; padding-left: 0; list-style: none; }
+      #decisions li { display: flex; gap: 8px; padding: 5px 0; border-top: 1px solid #eef0f2; align-items: baseline; }
+      #decisions li a { color: inherit; font-weight: 500; flex: 1; }
+      #decisions .st { font: 600 11px "Geist Mono", monospace; text-transform: uppercase; padding: 1px 7px; border-radius: 3px; background: #e5e7eb; color: #374151; }
+      #decisions .st.accepted { background: var(--ins-bg); color: var(--ins-ink); }
+      #decisions .st.rejected { background: var(--del-bg); color: var(--del-ink); }
+
+      @media print { .bar, #decisions { display: none !important; } body { padding-bottom: 0; } }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    </style>
+  </head>
+
+  <body data-view="markup">
+
+    <!-- ===== Review banner ===== -->
+    <header class="review-banner" aria-labelledby="review-heading">
+      <div class="wrap">
+        <h1 id="review-heading">CHeKT AI Server page: proposed on-page changes</h1>
+        <p>This is a review copy of <a href="https://chekt.com/ai-server/" style="color:#93c5fd">chekt.com/ai-server</a>, captured on 9 November 2026, with every change VertoDigital recommends marked in place. It is not the live page and it is not published by CHeKT. Each change has a numbered tag. Accept or reject it with the buttons on the tag, or use the bar at the bottom to switch between the marked-up page, the original, the page with every change applied, and the page with only your choices applied.</p>
+        <p>Nothing on this page changes the live site. Your choices stay in this browser, so use <strong>Copy decisions</strong> in the bar to send them back to us.</p>
+        <div class="legend" aria-label="Legend">
+          <span><span class="sw del">Red, struck through</span> Text we propose to remove</span>
+          <span><span class="sw ins">Green</span> Text we propose to add</span>
+          <span><span class="sw flag">Amber</span> Claim CHeKT needs to confirm before it stays on the page</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Meta data panel ===== -->
+    <div class="wrap">
+      <section class="rv-panel" id="meta-panel" aria-labelledby="meta-panel-heading">
+        <h2 id="meta-panel-heading">Page title, meta description and H1</h2>
+        <p class="sub">These sit in the page code and the hero, so they are shown here rather than in the page body. Keyword data comes from DataForSEO (US, 9 November 2026). Primary keyword: <em>AI video analytics</em> (110 searches per month, keyword difficulty 20). Secondary: <em>AI video monitoring</em> (30), <em>AI video verification</em> (20). Search intent is commercial. For each element, pick the wording option you prefer, then accept or reject the change. Option A is the one we applied to the page below.</p>
+
+        <div class="meta-row" id="row-title">
+          <div class="chip-slot" data-chip-for="1"></div>
+          <div class="what">Title tag</div>
+          <div class="cur"><span class="tt">Live</span>AI Server - CHeKT</div>
+          <div class="prop"><span class="tt">Proposed</span><span id="title-text"></span></div>
+          <div class="opts" role="radiogroup" aria-label="Title tag wording" data-group="title"></div>
+        </div>
+
+        <div class="meta-row" id="row-meta">
+          <div class="chip-slot" data-chip-for="2"></div>
+          <div class="what">Meta description</div>
+          <div class="cur"><span class="tt">Live</span>The CHeKT AI Server adds deep learning video analytics to your existing <mark class="flag" title="CHeKT to confirm">ONVIF</mark> cameras and picks up where detection leaves off, turning a raw detection into a verified video alarm routed straight to a monitoring center. <span class="flag-note">CHeKT to confirm: ONVIF only, or any IP camera?</span></div>
+          <div class="prop"><span class="tt">Proposed</span><span id="meta-text"></span></div>
+          <div class="opts" role="radiogroup" aria-label="Meta description wording" data-group="meta"></div>
+        </div>
+
+        <div class="meta-row" id="row-h1">
+          <div class="chip-slot" data-chip-for="3"></div>
+          <div class="what">H1</div>
+          <div class="cur"><span class="tt">Live</span>AI That Goes Beyond Detection.</div>
+          <div class="prop"><span class="tt">Proposed</span><span id="h1-text"></span></div>
+          <div class="opts" role="radiogroup" aria-label="H1 wording" data-group="h1"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== Replica of the CHeKT page ===== -->
+    <div class="ck-header" role="presentation">
+      <div class="wrap">
+        <img src="https://chekt.com/wp-content/uploads/2025/09/2025-chekt-logo-NOTAG-scaled.png" alt="CHeKT" width="160" height="44" />
+        <nav aria-label="CHeKT main navigation (not interactive in this copy)">
+          <span>Platform</span><span>Solutions</span><span>Products</span><span>Resources</span><span>Partners</span>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <section class="ck-hero" id="hero" aria-labelledby="hero-heading">
+        <div class="wrap">
+          <div data-chip-for="4" class="chip-slot"></div>
+          <h2 class="eyebrow x-del" data-c="4" id="hero-eyebrow-old">CHeKT AI Server<span class="tag-note">H2</span></h2>
+          <p class="eyebrow x-ins" data-c="4">CHeKT AI Server<span class="tag-note">styled text, not a heading</span></p>
+
+          <div data-chip-for="3" class="chip-slot"></div>
+          <h1 id="hero-heading"><del data-c="3">AI That Goes Beyond Detection.</del><ins data-c="3" id="h1-ins"></ins></h1>
+          <h2>Universal compatibility. Real-time verified alarms. Recurring revenue.</h2>
+        </div>
+      </section>
+
+      <section class="ck-sec" id="intro" aria-labelledby="intro-heading">
+        <div class="wrap cols">
+          <div>
+            <h2 id="intro-heading" class="sr" style="position:absolute;left:-9999px">Why detection is not a response</h2>
+
+            <div data-chip-for="5" class="chip-slot"></div>
+            <div class="x-ins" data-c="5">
+              <p>The CHeKT AI Server is an AI video analytics appliance that adds deep learning detection to the IP cameras your customers already own, then routes each detection to a monitoring center as a verified video alarm. For dealers and integrators, that means a new recurring monitoring line on installs you have already closed, with no camera replacement and no extra install visit.</p>
+            </div>
+
+            <p>Most AI appliances stop at detection. They flag motion, tag a person, maybe send a push notification - then it's on someone else to figure out what to do about it.</p>
+
+            <p class="x-del" data-c="5">The <a href="https://chekt.com/ai-server-ckta1612/">CHeKT AI Server</a> adds deep learning video analytics to your existing cameras and picks up where detection leaves off, turning a raw detection into a verified video alarm routed straight to a monitoring center.</p>
+
+            <p>From there, the <a href="https://chekt.com/chekt-video-control-panel">CHeKT Video Control Panel</a> puts operators in command - live video confirmation, two-way audio warnings, deterrent activation, and priority dispatch, all within seconds of the alert firing, not buried in an app notification.</p>
+
+            <p>Running on NVIDIA Jetson, the AI Server detects people, vehicles, and key behaviors - tailgating, aggression, slip-and-falls - giving operators the <a href="http://CHEKT.COM/CHEKT-PROACTIVE-VISUAL-SECURITY">real-time visual evidence</a> they need to dispatch with confidence.<ins data-c="6"> For the full detection list, channel count, and specifications, see the CHeKT AI Server <a href="https://chekt.com/ai-server-ckta1612/">CKTAI612 product page</a>.</ins></p>
+            <div data-chip-for="6" class="chip-slot"></div>
+
+            <p style="margin-top:22px">
+              <a class="btn x-del" data-c="7" href="https://chekt.com//book-a-demo">Connect with us</a><a class="btn x-ins" data-c="7" href="https://chekt.com/book-a-demo/">Book a demo</a>
+              <a class="btn x-del" data-c="8" href="https://chekt.com/ai-server-ckta1612/">Product details</a><a class="btn x-ins" data-c="8" href="https://chekt.com/ai-server-ckta1612/">View AI Server specs</a>
+            </p>
+            <div data-chip-for="7" class="chip-slot"></div>
+            <div data-chip-for="8" class="chip-slot"></div>
+          </div>
+
+          <div>
+            <p class="accent">Because detection is not a response.</p>
+            <div class="media">
+              <video controls preload="none" aria-label="CHeKT AI Server overview video"><source src="https://chekt.com/wp-content/uploads/2026/09/AI-Server.mp4" type="video/mp4" /></video>
+            </div>
+            <p class="caption"><ins data-c="9">CHeKT AI Server adds</ins><del data-c="9">CHEKT AI server adds</del> modern AI to any IP camera. One detection, routed straight to a monitoring center where your operators are in command.</p>
+            <div data-chip-for="9" class="chip-slot"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow" id="signal-path" aria-labelledby="signal-path-heading">
+        <div class="wrap">
+          <h2 id="signal-path-heading">From detection to verified alarm - in seconds.</h2>
+          <div class="steps">
+            <div class="step"><p class="t">#1. EXISTING CAMERA</p><img src="https://chekt.com/wp-content/uploads/2026/09/domecamera_2-2-300x112.png" alt="" loading="lazy" /><p>5MP Dome: Live Feed.</p></div>
+            <div class="step"><p class="t">#2. AI SERVER</p><img src="https://chekt.com/wp-content/uploads/2026/09/bridge-300x112.png" alt="bridge icon" loading="lazy" /><p>Intruder detected: Zone 2.</p></div>
+            <div class="step"><p class="t">#3. VIDEO CONTROL PANEL</p><img src="https://chekt.com/wp-content/uploads/2026/09/videoviews-300x112.png" alt="video icon" loading="lazy" /><p>Alarm zone armed.</p></div>
+            <div class="step"><p class="t">#4. MONITORING CENTER</p><img src="https://chekt.com/wp-content/uploads/2026/09/warning-300x112.png" alt="alarm icon" loading="lazy" /><p>Operator: Live view.</p></div>
+            <div class="step"><p class="t">#5. REAL-TIME RESPONSE</p><img src="https://chekt.com/wp-content/uploads/2026/09/policecar-300x112.png" alt="" loading="lazy" /><p>Talk down. Dispatch.</p></div>
+          </div>
+          <p class="strong">Most AI appliances stop at step #2. CHeKT is built for what happens next.</p>
+          <a class="btn orange" href="https://chekt.com/ai-server-ckta1612/#signal">See signal path</a>
+        </div>
+      </section>
+
+      <section class="ck-sec" id="one-signal" aria-labelledby="one-signal-heading">
+        <div class="wrap cols">
+          <div>
+            <h2 class="ck-h2" id="one-signal-heading">One Signal, Full Response</h2>
+            <h2 class="lead x-del" data-c="10">Every AI Server detection reaches the CHeKT Video Control Panel as a real alarm zone, not a raw tag - then hands off to whatever automation platform your monitoring center already runs.<span class="tag-note">H2</span></h2>
+            <p class="lead x-ins" data-c="10">Every AI Server detection reaches the CHeKT Video Control Panel as a real alarm zone, not a raw tag - then hands off to whatever automation platform your monitoring center already runs.<span class="tag-note">paragraph, not a heading</span></p>
+            <div data-chip-for="10" class="chip-slot"></div>
+            <ul class="checks">
+              <li><strong>Real alarm zones, not tags:</strong> Detections map to zone types and arming schedules, not just metadata.</li>
+              <li><strong>A wide detection library:</strong> Real-time alarm logic enables operators to act on the events that matter - not on every flicker of motion.</li>
+              <li><strong>Turnkey to your monitoring center:</strong> The Video Control Panel connects cameras to more than eighteen <ins data-c="11"><a href="https://chekt.com/chekt-integrations/">automation platforms</a></ins><del data-c="11">automation platforms</del> - no custom integration work on your end.</li>
+            </ul>
+            <div data-chip-for="11" class="chip-slot"></div>
+          </div>
+          <div>
+            <p class="accent">Eighteen-plus platforms. One integration.</p>
+            <div class="media"><video controls preload="none" aria-label="CHeKT Proactive Video Monitoring video"><source src="https://chekt.com/wp-content/uploads/2025/11/CHeLT-Proactive-Video-Monitorig.mp4" type="video/mp4" /></video></div>
+            <p class="caption">A detection becomes a real alarm zone, handed off to the monitoring platform you already run.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ck-sec tint" id="deploy" aria-labelledby="deploy-heading">
+        <div class="wrap cols">
+          <div>
+            <h2 class="ck-h2" id="deploy-heading"><del data-c="12">Built to Deploy, Not to Configure</del><ins data-c="12">Add AI to Existing Cameras: Built to Deploy, Not to Configure</ins></h2>
+            <div data-chip-for="12" class="chip-slot"></div>
+            <h2 class="lead x-del" data-c="13">The simplest deployment in the category: add AI to any camera, any brand, nothing ripped out - connected over an encrypted, outbound-only link with no port forwarding and no per-camera network setup.<span class="tag-note">H2</span></h2>
+            <p class="lead x-ins" data-c="13">Add AI to any IP camera, any brand, with nothing ripped out. The AI Server connects over an encrypted, outbound-only link with no port forwarding and no per-camera network setup.<span class="tag-note">paragraph, not a heading</span></p>
+            <div data-chip-for="13" class="chip-slot"></div>
+            <ul class="checks">
+              <li><strong>Works with what's already on the wall:</strong> No rip-and-replace, no rewiring, no new cabling.</li>
+              <li><strong>Nothing exposed:</strong> Outbound-only connection - nothing on the customer's network is reachable from the internet.</li>
+              <li><strong>Configured remotely:</strong> Set up and tuned <ins data-c="14">through the <a href="https://chekt.com/chekt-dealer-portal/">Dealer Portal</a>, without</ins><del data-c="14">through the <a href="https://chekt.com/dealer-portal">Dealer Portal</a>, without</del> a site visit.</li>
+            </ul>
+            <div data-chip-for="14" class="chip-slot"></div>
+          </div>
+          <div>
+            <p class="accent">No rip and replace. No network exposed.</p>
+            <div class="media"><video controls preload="none" aria-label="Exterior detection with talk-down video"><source src="https://chekt.com/wp-content/uploads/2025/10/Chekt-Exterior-Detection-wTalkdown.mp4" type="video/mp4" /></video></div>
+            <p class="caption">Any camera connects over an encrypted, outbound-only link - no port forwarding, no truck roll to configure it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ck-sec" id="revenue" aria-labelledby="revenue-heading">
+        <div class="wrap cols">
+          <div>
+            <h2 class="ck-h2" id="revenue-heading"><del data-c="15">Grow Revenue With AI Server</del><ins data-c="15">Grow Recurring Monthly Revenue (RMR) With AI Server</ins></h2>
+            <div data-chip-for="15" class="chip-slot"></div>
+            <h2 class="lead x-del" data-c="16">Add AI to existing infrastructure without waiting on a hardware refresh cycle - and without leaving revenue on the table. We enable dealers to sell video monitoring through the alarm centers they already trust - we don't compete with our own customers.<span class="tag-note">H2</span></h2>
+            <p class="lead x-ins" data-c="16">Add AI to existing infrastructure without waiting on a hardware refresh cycle - and without leaving revenue on the table. We enable dealers to sell video monitoring through the alarm centers they already trust - we don't compete with our own customers.<span class="tag-note">paragraph, not a heading</span></p>
+            <div data-chip-for="16" class="chip-slot"></div>
+            <ul class="checks">
+              <li><strong>Instant Upsell:</strong> Sell AI analytics into every camera system you've already installed - no new hardware, no re-wiring, no extra install visit.</li>
+              <li><strong>New RMR, Zero New Trucks:</strong> Add a recurring monitoring fee on top of jobs you've already closed, billed through the monitoring center you already use - turning past installs into ongoing revenue for you, not for us.</li>
+              <li><strong>Faster Time to Bill:</strong> Plug-n-play deployment means you're generating RMR <mark class="flag" title="CHeKT to confirm">in days, not weeks</mark><span class="flag-note">CHeKT to confirm</span> - no complex networking to slow down activation.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="accent">Your security partner. Never a competitor.</p>
+            <div class="media"><video controls preload="none" aria-label="Advanced threat detection and response video"><source src="https://chekt.com/wp-content/uploads/2025/10/Advanced-Threat-Detection-Response-Connect-to-proactive-protection-in-minutes.mp4" type="video/mp4" /></video></div>
+            <p class="caption">Every AI Server alert becomes billable revenue on your invoice - not ours.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="ck-sec tint new-section x-ins" data-c="17" id="how-dealers-add" aria-labelledby="how-dealers-add-heading">
+        <div class="wrap">
+          <div data-chip-for="17" class="chip-slot"></div>
+          <h2 class="ck-h2" id="how-dealers-add-heading">How Dealers Add the AI Server to an Installed Site</h2>
+          <p>Adding the AI Server to an installed site takes five steps, and none of them require replacing a camera.</p>
+          <ol class="steps-list">
+            <li><strong>Pick an installed site.</strong> Start with a customer that already has IP cameras on the wall.</li>
+            <li><strong>Connect the cameras.</strong> The cameras connect to the AI Server over an encrypted, outbound-only link, with no port forwarding and no per-camera network setup.</li>
+            <li><strong>Configure remotely.</strong> Set up and tune detections through the <a href="https://chekt.com/chekt-dealer-portal/">Dealer Portal</a>, without a site visit.</li>
+            <li><strong>Arm the alarm zones.</strong> Pair the AI Server with the CHeKT <a href="https://chekt.com/chekt-video-control-panel/">Video Control Panel</a> so each detection becomes a real alarm zone with an arming schedule.</li>
+            <li><strong>Bill through your monitoring center.</strong> The alarm lands in the automation platform your monitoring center already runs, and you add a recurring monitoring fee to a job you have already closed.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="ck-sec" id="behavior-ai" aria-labelledby="behavior-ai-heading">
+        <div class="wrap cols">
+          <div>
+            <h2 class="ck-h2" id="behavior-ai-heading">Proactively Detect and Deter a Wide Range of Critical Events</h2>
+            <h2 class="lead x-del" data-c="18">Upgrade your existing cameras with Behavior AI to provide proactive security for lone worker and high-risk environments.<span class="tag-note">H2</span></h2>
+            <p class="lead x-ins" data-c="18">Upgrade your existing cameras with Behavior AI to provide proactive security for lone worker and high-risk environments.<span class="tag-note">paragraph, not a heading</span></p>
+            <div data-chip-for="18" class="chip-slot"></div>
+            <ul class="checks">
+              <li><strong>Fighting and Aggressive Behavior:</strong> Threatening actions <ins data-c="19">trigger</ins><del data-c="19">triggers</del> live audio warnings to the property.</li>
+              <li><strong>Missing Person Alarm:</strong> <mark class="flag" title="CHeKT to confirm availability">Necessary for lone worker safety in guard, retail and healthcare environments.</mark><span class="flag-note">CHeKT to confirm this alarm is available</span></li>
+              <li><strong>Slip and Fall:</strong> Detects individuals falling or collapsing, useful for elderly care facilities and retail shops.</li>
+              <li><strong>Hands Up Alarm:</strong> Triggers live audio warning to the property; active monitoring until dispatch arrives.</li>
+            </ul>
+            <div data-chip-for="19" class="chip-slot"></div>
+            <p class="x-ins" data-c="20">Slip and fall, aggressive behavior, and missing person detection require the <a href="https://chekt.com/ai-server-ckta1612/">advanced license</a>.</p>
+            <div data-chip-for="20" class="chip-slot"></div>
+          </div>
+          <div>
+            <p class="accent">Behavior AI becomes an alarm signal for human response.</p>
+            <img src="https://chekt.com/wp-content/uploads/2026/10/threatvideo.gif" alt="AI Behavior" loading="lazy" width="560" />
+            <p class="caption">Detection becomes an alarm signal for human response. Video evidence is <ins data-c="21">timestamped, recorded, and stored</ins><del data-c="21">timestamped and recorded and stored</del> in the CHeKT cloud for one year.</p>
+            <div data-chip-for="21" class="chip-slot"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ck-sec tint" id="actionable-response" aria-labelledby="actionable-response-heading">
+        <div class="wrap" style="max-width:860px">
+          <h2 class="ck-h2" id="actionable-response-heading">Transforming AI Detection into Actionable Response</h2>
+          <p>Analytics tell somebody something happened; an alarm makes somebody do something about it. That's why CHeKT goes beyond simple detection - a turnkey solution built for security leaders, <ins data-c="22"><a href="https://chekt.com/for-security-dealers-integrators/">alarm dealers</a>, and <a href="https://chekt.com/for-monitoring-centers-central-stations/">central station operators</a></ins><del data-c="22">alarm dealers, and central station operators</del>.</p>
+          <div data-chip-for="22" class="chip-slot"></div>
+          <p class="x-ins" data-c="23">For background on how video verification helps monitoring centers stay ahead of false alarms, read our <a href="https://chekt.com/video-verification-stay-ahead-of-false-alarms/">guide to video alarm verification</a>.</p>
+          <div data-chip-for="23" class="chip-slot"></div>
+          <p>With the CHeKT AI Server turning any existing camera into a smart, filtered detector connected to our platform, operators and law enforcement get the visual proof they need to act fast and stop crime before it escalates.</p>
+          <p>The result: elevated operations, new recurring revenue, happier customers, and a competitive edge - all without a complex upgrade.</p>
+        </div>
+      </section>
+
+      <section class="ck-sec faq new-section x-ins" data-c="24" id="faq" aria-labelledby="faq-heading">
+        <div class="wrap" style="max-width:860px">
+          <div data-chip-for="24" class="chip-slot"></div>
+          <h2 class="ck-h2" id="faq-heading">Frequently Asked Questions About the AI Server</h2>
+          <h3>What is the CHeKT AI Server?</h3>
+          <p>The CHeKT AI Server is an AI video analytics appliance that adds deep learning detection to existing IP cameras and sends each detection to a monitoring center as a verified video alarm through the CHeKT Video Control Panel.</p>
+          <h3>Can dealers add AI video analytics to cameras that are already installed?</h3>
+          <p>Yes, dealers can add AI video analytics to installed cameras with the AI Server. It works with existing IP cameras from any brand, so nothing is ripped out, rewired, or replaced. <span class="flag-note">CHeKT to confirm: any IP camera, or ONVIF only?</span></p>
+          <h3>How do dealers earn recurring revenue with the AI Server?</h3>
+          <p>Dealers earn recurring revenue with the AI Server by adding a monitoring fee to systems they have already installed, billed through the monitoring center they already use. CHeKT does not sell monitoring, so it does not compete with its dealers.</p>
+          <h3>What is a verified video alarm?</h3>
+          <p>A verified video alarm is an alarm event that reaches the monitoring center with live video, so an operator can confirm what is happening, issue a talk-down, and request dispatch.</p>
+          <h3>Does the AI Server work with my monitoring center's software?</h3>
+          <p>The AI Server works with the automation platform your monitoring center already runs. The CHeKT Video Control Panel connects to eighteen-plus <a href="https://chekt.com/chekt-integrations/">automation platforms</a>.</p>
+          <h3>Does the AI Server require changes to the customer's network?</h3>
+          <p>No, the AI Server does not require port forwarding. It connects over an encrypted, outbound-only link, so nothing on the customer's network is reachable from the internet.</p>
+        </div>
+      </section>
+
+      <section class="cta-band" id="closing-cta" aria-labelledby="closing-cta-heading">
+        <div class="wrap">
+          <h2 id="closing-cta-heading"><mark class="flag" title="CHeKT to confirm" style="background:#fff1c2;color:#5c4300">Deploy your first AI Server in minutes</mark> - no truck roll required.</h2>
+          <span class="flag-note" style="margin:0 0 10px">CHeKT to confirm "in minutes"</span><br />
+          <a class="btn" href="https://chekt.com/become-a-partner/">Become a partner</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ck-footer">
+      <div class="wrap">
+        <div>Copyright &copy; 2026 CHeKT &middot; <a href="https://chekt.com/privacy-policy/">Privacy Policy</a><a href="https://chekt.com/gdpr/">GDPR</a></div>
+        <div>+1 224-442-4358 &middot; <a href="https://chekt.com/contact-us/">Contact Us</a></div>
+      </div>
+    </footer>
+
+    <!-- ===== Technical and schema proposals ===== -->
+    <div class="wrap">
+      <section class="rv-panel" id="schema-panel" aria-labelledby="schema-panel-heading">
+        <h2 id="schema-panel-heading">Changes in the page code</h2>
+        <p class="sub">These do not show on the page itself, so they are listed here.</p>
+
+        <div class="meta-row">
+          <div class="chip-slot" data-chip-for="25"></div>
+          <div class="what">FAQPage structured data</div>
+          <p>Yoast already outputs WebPage, BreadcrumbList and Organization schema. We propose adding FAQPage JSON-LD that matches the FAQ above word for word. Google now limits FAQ rich results to authoritative government and health sites, so the value is machine-readable question-and-answer content for AI answer engines, not a search result feature. This change only makes sense if the FAQ section (#24) is accepted. Illustrative markup (shortened to the first two questions):</p>
+          <pre class="code" tabindex="0">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the CHeKT AI Server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CHeKT AI Server is an AI video analytics appliance that adds deep learning detection to existing IP cameras and sends each detection to a monitoring center as a verified video alarm through the CHeKT Video Control Panel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can dealers add AI video analytics to cameras that are already installed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, dealers can add AI video analytics to installed cameras with the AI Server. It works with existing IP cameras from any brand, so nothing is ripped out, rewired, or replaced."
+      }
+    }
+  ]
+}</pre>
+        </div>
+
+        <div class="meta-row">
+          <div class="chip-slot" data-chip-for="26"></div>
+          <div class="what">Image alt text</div>
+          <p>Two images carry weak or no alt text. We propose descriptive alt text for both, and an empty alt attribute (<code>alt=""</code>) on purely decorative icons so screen readers skip them.</p>
+          <div class="tscroll"><table class="simple">
+            <thead><tr><th>Image</th><th>Current alt text</th><th>Proposed</th></tr></thead>
+            <tbody>
+              <tr><td><code>threatvideo.gif</code></td><td>"AI Behavior"</td><td>Descriptive alt text. Draft wording for CHeKT to adjust: "CHeKT AI Behavior Detection demo showing a slip and fall alarm"</td></tr>
+              <tr><td><code>monitoring-image-for-dealers-and-integrators.png</code></td><td>"monitoring image for dealers and integrators"</td><td>Descriptive alt text describing what the image shows (wording to be written once CHeKT confirms the image is staying)</td></tr>
+              <tr><td>Camera and police car icons in the signal path, header logo</td><td>(empty or missing)</td><td>Decorative icons: empty alt attribute. Header logo: "CHeKT"</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <div class="meta-row">
+          <div class="chip-slot" data-chip-for="27"></div>
+          <div class="what">Internal link clean-up</div>
+          <p>Our page extraction found links that are inconsistent. We propose normalising each one to a lowercase, relative HTTPS URL and confirming them in Elementor, plus trimming repeated links to the product page that use identical anchor text.</p>
+          <div class="tscroll"><table class="simple">
+            <thead><tr><th>Where it appears</th><th>Found on the live page</th><th>Proposed</th></tr></thead>
+            <tbody>
+              <tr><td>"real-time visual evidence" link</td><td><code>http://CHEKT.COM/CHEKT-PROACTIVE-VISUAL-SECURITY</code></td><td><code>/chekt-proactive-visual-security/</code></td></tr>
+              <tr><td>Video Control Panel link</td><td><code>https://www.chekt.com/chekt-video-control-panel</code> (www variant)</td><td><code>/chekt-video-control-panel/</code></td></tr>
+              <tr><td>Dealer Portal link</td><td><code>https://chekt.com/dealer-portal</code></td><td><code>/chekt-dealer-portal/</code></td></tr>
+              <tr><td>Become a Partner button</td><td><code>https://chekt.com/BECOME-A-PARTNER</code></td><td><code>/become-a-partner/</code></td></tr>
+              <tr><td>Book a Demo button</td><td><code>https://chekt.com//book-a-demo</code> (double slash)</td><td><code>/book-a-demo/</code> (see change 7)</td></tr>
+              <tr><td>Product page links</td><td>Several links to the same page with identical anchor text</td><td>Keep the most useful ones and link the rest to different anchor text or drop them</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </section>
+
+      <section class="rv-panel" id="notes-panel" aria-labelledby="notes-panel-heading">
+        <h2 id="notes-panel-heading">Notes from VertoDigital</h2>
+        <p class="sub">Context for the decisions above. None of this goes on the page.</p>
+
+        <h3>Page role</h3>
+        <p>/ai-server/ is the dealer and integrator solution page. It targets "AI video analytics" and the buying question "how do I add AI to cameras I've already installed and bill for it?" Model numbers, channel counts and specifications live on <a href="https://chekt.com/ai-server-ckta1612/">/ai-server-ckta1612/</a>. We recommend keeping them off this page and linking to the product page instead.</p>
+
+        <h3>Claims we could not verify from public sources</h3>
+        <p>Please confirm each of these before publishing. They are marked amber above.</p>
+        <ul>
+          <li>"Deploy your first AI Server in minutes" (closing call to action)</li>
+          <li>"generating RMR in days, not weeks" (Faster Time to Bill)</li>
+          <li>Whether the AI Server works with IP cameras generally or only ONVIF cameras. The live meta description says ONVIF; the page copy says any IP camera.</li>
+          <li>Whether the Missing Person Alarm is available</li>
+        </ul>
+        <p>We also propose removing "The simplest deployment in the category" (change 13), because it is a superlative we cannot support.</p>
+
+        <h3>Cannibalisation guardrail</h3>
+        <p>We recommend not targeting "video alarm verification" or "video verified alarm" on this page. <a href="https://chekt.com/video-verification-stay-ahead-of-false-alarms/">/video-verification-stay-ahead-of-false-alarms/</a> already ranks for both (positions 7 to 8 in DataForSEO), so this page links to it instead (change 23).</p>
+
+        <h3>Keyword data and its limits</h3>
+        <div class="tscroll"><table class="simple">
+          <thead><tr><th>Keyword</th><th>Searches per month (US)</th><th>Keyword difficulty</th></tr></thead>
+          <tbody>
+            <tr><td>ai video analytics</td><td>110</td><td>20</td></tr>
+            <tr><td>ai video monitoring</td><td>30</td><td>27</td></tr>
+            <tr><td>ai video verification</td><td>20</td><td>not reported</td></tr>
+            <tr><td>AI video analytics for existing cameras</td><td>no measurable volume (used as the concept phrase)</td><td>not reported</td></tr>
+          </tbody>
+        </table></div>
+        <p>Source: DataForSEO, US, 9 November 2026. Demand for these terms is small, so we expect this page to do its work through conversion and citation in AI answers rather than through traffic.</p>
+      </section>
+    </div>
+
+    <!-- ===== Decision bar ===== -->
+    <aside id="decisions" aria-label="All proposed changes" role="region">
+      <h2>All proposed changes</h2>
+      <ol id="decisions-list"></ol>
+    </aside>
+
+    <div class="bar" role="region" aria-label="Review controls">
+      <div class="wrap">
+        <span class="count" id="count" aria-live="polite"></span>
+        <button class="list-btn" id="toggle-list" type="button" aria-expanded="false" aria-controls="decisions">All changes</button>
+        <span class="grow"></span>
+        <div class="seg" role="group" aria-label="View">
+          <button type="button" data-view-btn="markup" aria-pressed="true">Marked up</button>
+          <button type="button" data-view-btn="original" aria-pressed="false">Original</button>
+          <button type="button" data-view-btn="proposed" aria-pressed="false">All applied</button>
+          <button type="button" data-view-btn="selection" aria-pressed="false">My choices</button>
+        </div>
+        <button class="act ghost" id="accept-all" type="button">Accept all</button>
+        <button class="act ghost" id="reset" type="button">Reset</button>
+        <button class="act" id="copy" type="button">Copy decisions</button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        // ── Change register: id, short label ───────────────────────────
+        var CHANGES = [
+          [1, 'Title tag'],
+          [2, 'Meta description'],
+          [3, 'H1'],
+          [4, 'Eyebrow: heading becomes styled text'],
+          [5, 'New intro paragraph, old one removed'],
+          [6, 'Link to the product page for specs'],
+          [7, 'Button: Connect With Us to Book a Demo'],
+          [8, 'Button: Product Details to View AI Server Specs'],
+          [9, 'Caption: brand name capitalisation'],
+          [10, 'One Signal intro: heading becomes paragraph'],
+          [11, 'Link "automation platforms"'],
+          [12, 'H2: Add AI to Existing Cameras'],
+          [13, 'Deploy intro: heading becomes paragraph, superlative removed'],
+          [14, 'Dealer Portal link fixed'],
+          [15, 'H2: Grow Recurring Monthly Revenue (RMR)'],
+          [16, 'Revenue intro: heading becomes paragraph'],
+          [17, 'New section: How Dealers Add the AI Server'],
+          [18, 'Behavior AI intro: heading becomes paragraph'],
+          [19, 'Grammar: "trigger"'],
+          [20, 'Advanced license note'],
+          [21, 'List punctuation: timestamped, recorded, and stored'],
+          [22, 'Links to dealer and central station pages'],
+          [23, 'Link to video alarm verification guide'],
+          [24, 'New FAQ section (6 questions)'],
+          [25, 'FAQPage structured data'],
+          [26, 'Image alt text'],
+          [27, 'Internal link clean-up']
+        ];
+        var LABEL = {}; CHANGES.forEach(function (c) { LABEL[c[0]] = c[1]; });
+
+        var OPTIONS = {
+          title: [
+            ['A', 'AI Video Analytics for Existing Cameras | CHeKT AI Server', '(applied above)'],
+            ['B', 'AI Video Verification for Dealers & Central Stations | CHeKT', 'about 60 characters'],
+            ['C', 'Add AI to Existing Cameras, Get Verified Alarms | CHeKT', 'about 55 characters']
+          ],
+          meta: [
+            ['A', 'Add AI video analytics to cameras you’ve already installed. CHeKT AI Server turns detections into verified video alarms and recurring revenue for dealers.', '(applied above)'],
+            ['B', 'Turn the cameras you’ve already installed into verified video alarms. The CHeKT AI Server adds AI analytics and routes every detection to your monitoring center.', 'about 160 characters'],
+            ['C', 'Dealers: add AI video analytics to installed cameras and bill the recurring fee through your monitoring center. No rip and replace, no port forwarding.', 'about 150 characters']
+          ],
+          h1: [
+            ['A', 'AI Video Analytics That Go Beyond Detection.', '(applied above)'],
+            ['B', 'AI Video Analytics for Existing Cameras, Built Beyond Detection', ''],
+            ['C', 'Add AI to the Cameras You Already Installed', '']
+          ]
+        };
+        var OPT_LABEL = { title: 'Title tag', meta: 'Meta description', h1: 'H1' };
+
+        var KEY = 'chekt-ai-server-review-v1';
+        var state = { status: {}, opt: { title: 'A', meta: 'A', h1: 'A' }, view: 'markup' };
+        try {
+          var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+          if (saved && saved.status) { state.status = saved.status; state.opt = saved.opt || state.opt; }
+        } catch (e) { /* storage unavailable: page still works */ }
+        function persist() {
+          try { localStorage.setItem(KEY, JSON.stringify({ status: state.status, opt: state.opt })); } catch (e) { /* ignore */ }
+        }
+
+        function $(s, r) { return (r || document).querySelector(s); }
+        function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+        function isIns(el) { return el.tagName === 'INS' || el.classList.contains('x-ins'); }
+
+        // ── Wording option radios ──────────────────────────────────────
+        function optText(group) {
+          var o = OPTIONS[group].filter(function (x) { return x[0] === state.opt[group]; })[0];
+          return o ? o[1] : '';
+        }
+        function renderOpts() {
+          $$('.opts').forEach(function (box) {
+            var g = box.getAttribute('data-group');
+            if (!box.children.length) {
+              OPTIONS[g].forEach(function (o) {
+                var l = document.createElement('label');
+                var r = document.createElement('input');
+                r.type = 'radio'; r.name = 'opt-' + g; r.value = o[0];
+                r.addEventListener('change', function () { state.opt[g] = o[0]; persist(); renderOpts(); });
+                var k = document.createElement('span'); k.className = 'k'; k.textContent = 'Option ' + o[0];
+                var t = document.createElement('span'); t.textContent = o[1];
+                if (o[2]) { var c = document.createElement('span'); c.className = 'cc'; c.textContent = ' ' + o[2]; t.appendChild(c); }
+                l.appendChild(r); l.appendChild(k); l.appendChild(t); box.appendChild(l);
+              });
+            }
+            $$('input', box).forEach(function (r) { r.checked = (r.value === state.opt[g]); });
+          });
+          $('#title-text').textContent = optText('title');
+          $('#meta-text').textContent = optText('meta');
+          $('#h1-text').textContent = optText('h1');
+          $('#h1-ins').textContent = optText('h1');
+        }
+
+        // ── Chips (accept / reject controls) ───────────────────────────
+        function buildChips() {
+          CHANGES.forEach(function (c) {
+            var id = c[0];
+            var slots = $$('[data-chip-for="' + id + '"]');
+            slots.forEach(function (slot, i) {
+              if (i > 0) { return; }
+              var chip = document.createElement('span');
+              chip.className = 'chip'; chip.setAttribute('data-chip', id);
+              chip.innerHTML = '<span class="n">#' + id + '</span><span class="lbl"></span>' +
+                '<button type="button" class="acc" data-act="accepted">Accept</button>' +
+                '<button type="button" class="rej" data-act="rejected">Reject</button>';
+              $('.lbl', chip).textContent = LABEL[id];
+              $('.lbl', chip).title = LABEL[id];
+              $$('button', chip).forEach(function (b) {
+                b.addEventListener('click', function () {
+                  var act = b.getAttribute('data-act');
+                  if (state.status[id] === act) { delete state.status[id]; } else { state.status[id] = act; }
+                  persist(); render();
+                });
+              });
+              slot.className = (slot.className ? slot.className + ' ' : '') + 'chip-block';
+              if (slot.tagName === 'DIV' && slot.parentElement && slot.parentElement.classList.contains('ck-hero')) { /* keep */ }
+              slot.appendChild(chip);
+              slot.id = 'change-' + id;
+            });
+          });
+        }
+
+        // ── Visibility per view and decision ───────────────────────────
+        function render() {
+          var view = state.view;
+          document.body.setAttribute('data-view', view);
+          $$('[data-c]').forEach(function (el) {
+            var id = el.getAttribute('data-c');
+            if (!CHANGES.some(function (c) { return String(c[0]) === id; })) { return; }
+            var st = state.status[id];
+            var ins = isIns(el);
+            var showProposed;
+            if (view === 'original') { showProposed = false; }
+            else if (view === 'proposed') { showProposed = true; }
+            else if (view === 'selection') { showProposed = (st === 'accepted'); }
+            else { showProposed = null; }
+            var hide = false, dim = false;
+            if (showProposed === null) {
+              if (st === 'accepted' && !ins) { dim = true; }
+              if (st === 'rejected' && ins) { dim = true; }
+            } else {
+              hide = ins ? !showProposed : showProposed;
+            }
+            if (hide) { el.setAttribute('data-hide', '1'); } else { el.removeAttribute('data-hide'); }
+            if (dim) { el.setAttribute('data-dim', '1'); } else { el.removeAttribute('data-dim'); }
+          });
+          $$('.chip').forEach(function (chip) {
+            var id = chip.getAttribute('data-chip');
+            var st = state.status[id];
+            $$('button', chip).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-act') === st)); });
+          });
+          $$('[data-view-btn]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-view-btn') === view)); });
+
+          // Meta panel previews follow the decision in the non-markup views
+          var metaPanel = $('#meta-panel'); if (metaPanel) { metaPanel.style.display = ''; }
+
+          var a = 0, r = 0;
+          CHANGES.forEach(function (c) { var s = state.status[c[0]]; if (s === 'accepted') { a++; } else if (s === 'rejected') { r++; } });
+          var p = CHANGES.length - a - r;
+          $('#count').innerHTML = '<b>' + a + '</b> accepted · <b>' + r + '</b> rejected · <b>' + p + '</b> undecided of <b>' + CHANGES.length + '</b>';
+          renderList();
+        }
+
+        function renderList() {
+          var ol = $('#decisions-list'); ol.innerHTML = '';
+          CHANGES.forEach(function (c) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = '#change-' + c[0]; a.textContent = '#' + c[0] + '  ' + LABEL[c[0]];
+            a.addEventListener('click', function () { $('#decisions').classList.remove('open'); $('#toggle-list').setAttribute('aria-expanded', 'false'); });
+            var s = document.createElement('span');
+            var st = state.status[c[0]] || 'undecided';
+            s.className = 'st ' + st; s.textContent = st;
+            li.appendChild(a); li.appendChild(s); ol.appendChild(li);
+          });
+        }
+
+        // ── Controls ───────────────────────────────────────────────────
+        $$('[data-view-btn]').forEach(function (b) {
+          b.addEventListener('click', function () { state.view = b.getAttribute('data-view-btn'); render(); });
+        });
+        $('#toggle-list').addEventListener('click', function () {
+          var d = $('#decisions'); var open = d.classList.toggle('open');
+          this.setAttribute('aria-expanded', String(open));
+        });
+        $('#accept-all').addEventListener('click', function () {
+          CHANGES.forEach(function (c) { state.status[c[0]] = 'accepted'; }); persist(); render();
+        });
+        $('#reset').addEventListener('click', function () {
+          if (!window.confirm('Clear all of your accept and reject choices?')) { return; }
+          state.status = {}; state.opt = { title: 'A', meta: 'A', h1: 'A' }; persist(); renderOpts(); render();
+        });
+        $('#copy').addEventListener('click', function () {
+          var lines = ['CHeKT AI Server page: decisions on proposed changes', ''];
+          CHANGES.forEach(function (c) {
+            var st = state.status[c[0]] || 'undecided';
+            var extra = '';
+            if (c[0] === 1) { extra = ' (wording option ' + state.opt.title + ')'; }
+            if (c[0] === 2) { extra = ' (wording option ' + state.opt.meta + ')'; }
+            if (c[0] === 3) { extra = ' (wording option ' + state.opt.h1 + ')'; }
+            lines.push('#' + c[0] + ' ' + c[1] + ': ' + st.toUpperCase() + extra);
+          });
+          var text = lines.join('\n');
+          var btn = this;
+          function done(msg) { var o = btn.textContent; btn.textContent = msg; setTimeout(function () { btn.textContent = o; }, 1800); }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () { done('Copied'); }, function () { window.prompt('Copy your decisions:', text); });
+          } else { window.prompt('Copy your decisions:', text); }
+        });
+
+        buildChips();
+        renderOpts();
+        render();
+      })();
+    </script>
+  </body>
+</html>
