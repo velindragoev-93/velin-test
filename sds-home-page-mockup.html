@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SDS Home Page Mockup</title>
+<meta name="description" content="Round 1 mockup of the Shooter Detection Systems homepage with proposed light-touch edits highlighted." />
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{--sds-blue:#003DA5;--sds-grey:#53565A;--tint:#f3f6fb;--rule:#e5e7eb;--hl:#fff3a3;--hl-edge:#f5c400;--del-bg:#fde8e6;--del-ink:#b42318;--font:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--sds-grey);background:#fff;line-height:1.5}
+a{color:inherit}
+h1,h2,h3{margin:0}
+.wrap{max-width:1100px;margin:0 auto}
+section{padding:72px 48px}
+/* review layer */
+mark.chg{background:none;color:inherit}
+.on mark.chg{background:var(--hl);color:#111;box-shadow:0 0 0 2px var(--hl);border-bottom:2px solid var(--hl-edge);border-radius:2px}
+.on .del{color:var(--del-ink);text-decoration:line-through;background:var(--del-bg);padding:0 2px}
+.off .del{display:none}
+.on .blk{outline:2px dashed var(--hl-edge);outline-offset:8px;border-radius:4px}
+.tag{display:none}
+.on .tag{display:inline-block;background:var(--hl-edge);color:#111;font-weight:700;font-size:11px;line-height:1;letter-spacing:.06em;text-transform:uppercase;padding:5px 8px;border-radius:3px;margin-bottom:10px}
+.off .review{display:none}
+.bar{position:sticky;top:0;z-index:20;background:#111827;color:#fff;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;padding:12px 32px;font-size:14px}
+.bar .keys{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.bar .key{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:14px;display:inline-block}
+.toggle{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #fff;background:transparent;color:#fff;font:600 14px var(--font);cursor:pointer}
+.toggle:focus-visible,a:focus-visible{outline:3px solid #66a3ff;outline-offset:2px}
+.review-top{background:#fffbe0;border-bottom:1px solid var(--hl-edge);padding:20px 48px;font-size:14px;color:#374151}
+.review-top .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:12px}
+.review-top .lbl{font-weight:700;margin-bottom:4px}
+.review-bottom{background:#111827;color:#e5e7eb;padding:40px 48px;font-size:14px;line-height:1.6}
+/* mock site */
+.promo{background:var(--sds-blue);color:#fff;text-align:center;padding:12px 24px;font-size:15px}
+.promo a{font-weight:600}
+.site-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:18px 48px;border-bottom:1px solid var(--rule)}
+.logo{font-weight:700;font-size:20px;line-height:1.1;color:var(--sds-blue)}
+.logo small{display:block;font-weight:400;font-size:10px;color:var(--sds-grey);margin-top:4px;letter-spacing:.04em}
+.nav{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:15px}
+.nav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{min-height:44px;display:inline-flex;align-items:center;padding:0 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none}
+.btn.out{border:1px solid var(--sds-blue);color:var(--sds-blue)}
+.btn.fill{background:var(--sds-blue);color:#fff}
+.hero{background:linear-gradient(135deg,#6b6e73,#2d2f33);color:#fff;padding:96px 48px 88px}
+.hero h1{font-weight:600;font-size:clamp(36px,5vw,56px);line-height:1.08;margin-bottom:24px;max-width:760px}
+.hero p{font-size:20px;margin:0 0 32px;max-width:760px}
+.hero .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.pill{min-height:48px;display:inline-flex;align-items:center;padding:0 28px;border-radius:999px;font-weight:700;text-decoration:none}
+.pill.w{background:#fff;color:var(--sds-blue)}
+.pill.o{border:2px solid #fff;color:#fff}
+.center{text-align:center}
+.h2{font-weight:600;font-size:clamp(26px,3.2vw,34px);line-height:1.2;color:var(--sds-grey)}
+.logos{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:1100px;margin:28px auto 0;padding:0;list-style:none}
+.logos li{padding:12px 18px;border:1px solid #d1d5db;border-radius:6px;font-weight:600;font-size:13px;color:#4b5563}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;max-width:960px;margin:40px auto 0}
+.stats .n{font-weight:700;font-size:clamp(34px,4vw,48px);color:var(--sds-blue)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.card{background:#fff;border-radius:8px;padding:24px;border:1px solid var(--rule)}
+.card h3{font-weight:600;font-size:20px;color:var(--sds-blue);margin-bottom:10px}
+.card p{margin:0;font-size:15px;line-height:1.6}
+.sols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:1200px;margin:36px auto 0}
+.sols .card{padding:28px}
+.sols h3{font-size:22px}
+.sols p{margin:0 0 18px}
+.sols a{color:var(--sds-blue);font-weight:700}
+.quote{font-weight:600;font-size:clamp(20px,2.4vw,26px);line-height:1.4;color:var(--sds-blue);margin:0 0 8px}
+.awards{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:28px 0 0;padding:0;list-style:none}
+.awards li{padding:10px 14px;border:1px solid #d1d5db;border-radius:999px;font-weight:600;font-size:12px;background:#fff}
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:24px}
+.news .t{font-weight:600;font-size:17px;line-height:1.4;color:var(--sds-blue);margin-bottom:12px}
+.news a{font-weight:700;color:var(--sds-blue)}
+.faq{max-width:900px;margin:0 auto}
+.faq .q{border-top:1px solid var(--rule);padding:16px 0;display:flex;justify-content:space-between;gap:16px;font-weight:600;font-size:18px;color:var(--sds-blue)}
+.talk{background:var(--sds-blue);color:#fff;text-align:center;padding:80px 48px}
+.talk h2{font-weight:600;font-size:36px;margin-bottom:14px}
+.talk p{margin:0 auto 28px;max-width:640px;font-size:20px}
+.site-foot{background:#1f2937;color:#d1d5db;padding:48px;font-size:14px}
+.site-foot .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;max-width:1100px;margin:0 auto 28px}
+.site-foot strong{color:#fff}
+@media(max-width:700px){section,.hero,.talk,.site-foot,.site-head,.review-top,.review-bottom{padding-left:20px;padding-right:20px}.bar{padding:12px 20px}}
+</style>
+</head>
+<body>
+<div id="mock" class="on">
+
+<div class="bar" role="region" aria-label="Review controls">
+  <div class="keys">
+    <strong>Round 1: light-touch edits</strong>
+    <span class="key"><span class="sw" style="background:#fff3a3;border-bottom:2px solid #f5c400"></span>Added or changed</span>
+    <span class="key"><span class="sw" style="background:#fde8e6;border:1px solid #b42318"></span>Replaced live copy</span>
+    <span class="key"><span class="sw" style="border:2px dashed #f5c400"></span>New block</span>
+  </div>
+  <button type="button" class="toggle" id="toggle" aria-pressed="true">Hide highlights</button>
+</div>
+
+<section class="review review-top" aria-labelledby="head-changes-heading" style="padding-top:20px;padding-bottom:20px">
+  <div class="wrap">
+    <strong id="head-changes-heading" style="color:#111">Changes that don't show on the page (head and code)</strong>
+    <div class="two">
+      <div>
+        <div class="lbl">Title tag</div>
+        <div><span class="del">Shooter Detection Systems – Gunshot Detection Experts</span></div>
+        <div style="margin-top:4px"><mark class="chg">Gunshot Detection Systems | Shooter Detection Systems (SDS)</mark></div>
+      </div>
+      <div>
+        <div class="lbl">Meta description</div>
+        <div><span class="del">SDS delivers gunshot detection systems with &lt;1 second alerts, 99.9% accuracy (truncated)</span></div>
+        <div style="margin-top:4px"><mark class="chg">Gunshot detection systems for indoor and outdoor spaces. Acoustic plus infrared sensing, alerts to security teams and 911, integrates with 50+ partners.</mark></div>
+      </div>
+    </div>
+    <div style="margin-top:12px">Also in this round: descriptive alt text on logos and award badges (replacing "Award Logo"), and Organization and WebSite schema.</div>
+  </div>
+</section>
+
+<div class="promo">Have questions for SDS? Need to talk to an expert? <a href="#talk" style="color:#fff">Click Here Today!</a></div>
+
+<header class="site-head">
+  <div class="logo">Shooter Detection<br>Systems<small>AN ALARM.COM COMPANY</small></div>
+  <nav class="nav" aria-label="Mockup main navigation">
+    <a href="#">Company ▾</a><a href="#">Products ▾</a><a href="#">Resources ▾</a><a href="#">Industries ▾</a><a href="#">Partners ▾</a>
+  </nav>
+  <div class="btns"><a class="btn out" href="#">Dealer Login</a><a class="btn fill" href="#">Contact Us</a></div>
+</header>
+
+<section id="hero" class="hero" aria-labelledby="hero-heading" style="padding:96px 48px 88px">
+  <h1 id="hero-heading">Leading the way in gunshot detection</h1>
+  <p>Speed saves lives. Our advanced technology gives organizations a time advantage in a crisis.</p>
+  <div class="row"><a class="pill w" href="#">Request a Demo</a><a class="pill o" href="#">Why SDS</a><a href="#" style="color:#fff;font-weight:600">Watch the video</a></div>
+</section>
+
+<section id="trusted" class="center" aria-labelledby="trusted-heading" style="padding:64px 48px 40px">
+  <h2 id="trusted-heading" class="h2" style="font-size:30px">Trusted by Leading Organizations</h2>
+  <ul class="logos" aria-label="Customer names (logo placeholders in this mockup)">
+    <li>BWI</li><li>Charleston International Airport</li><li>Dominion Energy</li><li>Flowserve</li><li>Georgia World Congress Center</li><li>Georgia Aquarium</li><li>Kroger</li><li>National Grid</li><li>Port Authority of NY &amp; NJ</li><li>Savannah College of Art and Design</li><li>Sallie Mae</li><li>Synovus</li><li>Toyota</li><li>Rite Aid</li><li>Attleboro Public Schools</li><li>U.S. Department of the Air Force</li>
+  </ul>
+</section>
+
+<section id="performance" class="center" aria-labelledby="performance-heading">
+  <h2 id="performance-heading" class="h2">Detect gunshots with unparalleled speed, accuracy, and overall performance</h2>
+  <div class="stats">
+    <div><div class="n">&lt;1 second*</div><div style="margin-top:6px">Alert time</div></div>
+    <div><div class="n">99.9%*</div><div style="margin-top:6px">Accuracy</div></div>
+    <div><div class="n">50+</div><div style="margin-top:6px">Integration Partners</div></div>
+  </div>
+  <p style="margin:28px auto 0;max-width:760px;font-size:14px">*Indoor PoE sensor.</p>
+</section>
+
+<section id="how-it-works" aria-labelledby="how-it-works-heading" style="background:var(--tint)">
+  <div class="wrap">
+    <h2 id="how-it-works-heading" class="h2" style="color:var(--sds-blue);margin-bottom:16px"><span class="del">How it works</span><mark class="chg" title="Adds the primary keyword to an existing heading">How gunshot detection works</mark></h2>
+    <p style="margin:0 0 36px;font-size:18px;max-width:820px"><mark class="chg" title="Two-sentence answer-first definition, built only from facts already on the page">Gunshot detection is technology that automatically identifies a firearm discharge, locates it, and alerts the people who need to respond. SDS systems pair acoustic and infrared sensing to confirm a shot and send alerts to security teams, building occupants and 911.</mark></p>
+    <div class="steps">
+      <div class="card"><h3>Gunshot detection</h3><p>Sensing and verification of shots.</p></div>
+      <div class="card"><h3>Notifications</h3><p>Real-time alerts, with gunshot locations shown on a map.</p></div>
+      <div class="card"><h3>Automated security</h3><p>Triggers video, access control lockdowns, and other features.</p></div>
+      <div class="card"><h3>Emergency response</h3><p>Incident details go to 911 with live updates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="solutions" aria-labelledby="solutions-heading">
+  <h2 id="solutions-heading" class="h2 center">Learn how our solutions can upgrade your security portfolio</h2>
+  <div class="sols">
+    <div class="card"><h3>Outdoor Perimeter gunshot detection</h3><p>Integrates with the leading security applications and platforms.</p><a href="#"><span class="del">Learn More</span><mark class="chg" title="Descriptive anchor text, links to the same page">Learn more about outdoor gunshot detection</mark></a></div>
+    <div class="card"><h3>Indoor gunshot detection</h3><p>Proven, patented dual-factor technology with over 600+ million hours of sensor operation in the field.</p><a href="#"><span class="del">Learn More</span><mark class="chg" title="Descriptive anchor text, links to the same page">Learn more about indoor gunshot detection</mark></a></div>
+    <div class="card"><h3>Faster, better emergency response (ResponderLink)</h3><p>Gives responders precise locations and live updates.</p><a href="#">About ResponderLink</a></div>
+  </div>
+</section>
+
+<section id="proof" class="center" aria-labelledby="proof-quote" style="background:var(--tint);padding:56px 48px">
+  <div style="max-width:900px;margin:0 auto">
+    <p id="proof-quote" class="quote">"It's just one more layer that gives people that extra peace of mind."</p>
+    <p style="margin:0;font-size:15px">Leila Centner, CEO and Co-Founder of Centner Academy</p>
+    <ul class="awards" aria-label="Awards and certifications (badge placeholders in this mockup)">
+      <li>CST Secure Campus Awards 2024</li><li>Security Innovator 2024</li><li>ASTORS Platinum 2023</li><li>Security Today STNPOY23</li><li>Platinum Award 2022</li><li>Campus Safety 2022</li><li>DHS SAFETY Act Certification</li>
+    </ul>
+  </div>
+</section>
+
+<section id="performance-proof" class="center" aria-labelledby="performance-proof-heading">
+  <div style="max-width:900px;margin:0 auto">
+    <h3 id="performance-proof-heading" style="font-weight:600;font-size:30px;color:var(--sds-blue);margin-bottom:14px">Proven best-in-class performance</h3>
+    <p style="margin:0 0 20px;font-size:18px;line-height:1.65">SDS has led the category since its first commercial sensor launched in 2015 and is the only company in our category with the highest-level DHS SAFETY Act Certification.</p>
+    <a href="#" style="color:var(--sds-blue);font-weight:700">About Us</a>
+  </div>
+</section>
+
+<section id="news" aria-labelledby="news-heading" style="background:var(--tint);padding:56px 48px">
+  <div class="wrap">
+    <h2 id="news-heading" class="h2" style="font-size:30px">The latest news and insights</h2>
+    <div class="news">
+      <div class="card"><div class="t">Shooter Detection Systems Joins ONVIF, Marking a New Chapt…</div><a href="#">Read More</a></div>
+      <div class="card"><div class="t">Shooter Detection Systems' Gunshot Detection System Earns Fo…</div><a href="#">Read More</a></div>
+      <div class="card"><div class="t">Shooter Detection Systems to Highlight Role of Gunshot Detec…</div><a href="#">Read More</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="faq">
+    <h2 id="faq-heading" class="h2" style="margin-bottom:28px">Gunshot Detection Systems FAQ</h2>
+    <div class="blk" style="margin:0 0 24px;padding:2px 0">
+      <span class="tag">New question</span>
+      <h3 style="font-weight:600;font-size:20px;color:var(--sds-blue);margin-bottom:8px"><mark class="chg" title="Targets the People Also Ask question for the primary keyword">How does gunshot detection work?</mark></h3>
+      <p style="margin:0;font-size:16px;line-height:1.65"><mark class="chg">Gunshot detection works by sensing the signature of a gunshot, confirming it, and alerting people automatically. SDS pairs acoustic and infrared sensors to confirm gunfire, then sends alerts with the shot's location to security teams, occupants and 911.</mark></p>
+    </div>
+    <div class="q"><span>What Is a Gunshot Detection System?</span><span aria-hidden="true">+</span></div>
+    <div class="q"><span>How accurate is a gunshot detection system, and how are false alarms prevented?</span><span aria-hidden="true">+</span></div>
+    <div class="q"><span>What is the difference between indoor and outdoor gunshot detection?</span><span aria-hidden="true">+</span></div>
+    <div class="q"><span>How does your gunshot detection system integrate with existing security infrastructure?</span><span aria-hidden="true">+</span></div>
+    <div class="q"><span>How fast does the system alert first responders?</span><span aria-hidden="true">+</span></div>
+    <div class="q"><span>Does gunshot detection record conversations or monitor people?</span><span aria-hidden="true">+</span></div>
+    <div class="q"><span>What is dual-factor gunshot detection?</span><span aria-hidden="true">+</span></div>
+  </div>
+</section>
+
+<section id="talk" class="talk" aria-labelledby="talk-heading">
+  <h2 id="talk-heading">Let's talk</h2>
+  <p>Don't wait until it's too late.</p>
+  <a class="pill w" href="#">Request a Demo</a>
+  <p style="margin:24px 0 0;font-size:16px">(844) 746-8911 &nbsp;|&nbsp; 8281 Greensboro Dr, Ste 100, Tysons, VA 22102</p>
+</section>
+
+<section class="review review-bottom" aria-labelledby="next-round-heading">
+  <div class="wrap">
+    <strong id="next-round-heading" style="color:#fff;font-size:16px">Not in this round: recommended for a second pass, once SDS supplies the facts</strong>
+    <div style="margin-top:12px">1. State what "&lt;1 second" and "99.9%" measure and under what conditions, and use the same "Indoor PoE sensor" qualifier in the meta description and on /why-sds/ and /sds-indoor/. This is the biggest trust gap on the page.</div>
+    <div>2. Put answers behind the six unanswered FAQ questions (only the first has answer text in the page source we saw).</div>
+    <div>3. Scope the SAFETY Act claim (product, year, what it covers) and replace the "only company in our category" wording with a checkable statement.</div>
+    <div>4. Define "Active Shooter Intelligence" and "dual-factor" in one sentence each.</div>
+    <div>5. Reconsider the stats heading ("unparalleled") and the closing CTA line.</div>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="cols">
+    <div><strong>Company</strong><br>Our Story<br>Why SDS<br>Patents &amp; Awards</div>
+    <div><strong>Products</strong><br>SDS Indoor<br>SDS Perimeter<br>ResponderLink</div>
+    <div><strong>Resources</strong><br>Blog<br>News<br>Case Studies<br>Whitepapers</div>
+    <div><strong>Support</strong><br>Technical Support<br>Dealer Login<br>Integration Partners</div>
+  </div>
+  <div class="center">© 2026 Shooter Detection Systems &nbsp;|&nbsp; Privacy Policy &nbsp;|&nbsp; Cookie Policy</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var root=document.getElementById('mock'),btn=document.getElementById('toggle');
+  btn.addEventListener('click',function(){
+    var on=root.classList.toggle('on');
+    root.classList.toggle('off',!on);
+    btn.textContent=on?'Hide highlights':'Show highlights';
+    btn.setAttribute('aria-pressed',on?'true':'false');
+  });
+})();
+</script>
+</body>
+</html>
